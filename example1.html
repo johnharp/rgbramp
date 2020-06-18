@@ -1,0 +1,72 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+	<style>
+		.ex1 {
+			width: 300px;
+			margin: 20px;
+		}
+
+		.ex1 td, th {
+			text-align: right;
+		}
+	</style>
+
+	<div class="ex1">
+
+		<table class="table table-sm">
+			<thead>
+				<tr>
+					<th>Start</th>
+					<th>Query ID</th>
+					<th>Elapsed (ms)</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr data-val="1200">
+					<td>06:44:00</td>
+					<th>111234</th>
+					<td>1,200</td>
+				</tr>
+				<tr data-val="1330">
+					<td>07:59:22</td>
+					<th>111235</th>
+					<td>1,330</td>
+				</tr>
+				<tr data-val="910">
+					<td>08:01:11</td>
+					<th>111236</th>
+					<td>910</td>
+				</tr>
+				<tr data-val="2250">
+					<td>08:01:42</td>
+					<th>111237</th>
+					<td>2,250</td>
+				</tr>
+				<tr data-val="500">
+					<td>08:32:42</td>
+					<th>111238</th>
+					<td>500</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+	<script type="module">
+		import { Rgb, Segment, ramp, applyColors, applyColorsIndex } 
+			from '/rgbramp.js';
+
+		let colors = ramp(
+			new Segment(new Rgb(0, 200, 0), new Rgb(200, 250, 200), 3),
+			new Segment(new Rgb(200, 200, 200), new Rgb(200, 200, 200), 4),
+			new Segment(new Rgb(255, 200, 200), new Rgb(200, 0, 0), 3)
+		);
+
+		applyColors('data-val', colors);
+
+	</script>
+</html>
