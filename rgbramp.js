@@ -25,8 +25,6 @@ function applyColorsIndex(dataAttribute, colors) {
 	elements.forEach(element => {
 		let index = Number(element.getAttribute(dataAttribute));
 
-		console.log(index);
-
 		let color = colors[index];
 		let bgColor = color.htmlColor();
 		let textColor = color.htmlColorContrasting();
